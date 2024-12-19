@@ -12,37 +12,43 @@
         <div class="img-icon">
           <img src="@/assets/images/Group-1.png" alt="Error" />
         </div>
+       <div>
         <p>
           <strong>Температура:</strong> {{ weatherData.main?.temp }} ° -
           Ощущается как {{ weatherData.main?.feels_like }} °
         </p>
+       </div>
       </div>
       <div class="weather-info">
         <div class="img-icon">
           <img src="@/assets/images/Group-4.png" alt="Error" />
         </div>
+        <div>
 
-        <p>
-          <strong>Давление:</strong>
-          {{ pressureInMmHg }} мм ртутного столба - нормальное
-        </p>
+          <p>
+            <strong>Давление:</strong>
+            {{ pressureInMmHg }} мм ртутного столба - нормальное
+          </p>
+        </div>
       </div>
       <div class="weather-info">
         <div class="img-icon">
           <img src="@/assets/images/Group-2.png" alt="Error" />
         </div>
-
-        <p><strong>Осадки:</strong> {{ weatherData.weather?.[0]?.main }}</p>
+        <div>
+          <p><strong>Осадки:</strong> {{ weatherData.weather?.[0]?.main }}</p>
+        </div>
       </div>
       <div class="weather-info">
         <div class="img-icon">
           <img src="@/assets/images/Group-3.png" alt="Error" />
         </div>
-
-        <p>
-          <strong>Ветер:</strong> {{ weatherData.wind?.speed }} м/с
-          {{ windDirection }}
-        </p>
+        <div>
+          <p>
+            <strong>Ветер:</strong> {{ weatherData.wind?.speed }} м/с
+            {{ windDirection }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -215,6 +221,11 @@ onMounted(() => {
       color: #939cb0;
       margin: 5px 0;
     }
+    @media (max-width: 500px){
+      h2{
+        font-size: 50px;
+      }
+    }
   }
   .second-box {
     width: 60%;
@@ -229,14 +240,14 @@ onMounted(() => {
       margin-bottom: 10px;
       display: flex;
       align-items: center; 
-      gap: 15px;
       .img-icon{
-        width: 40px;
-        height: 40px;
         background-color: white;
+        padding: 20px;
         border-radius: 50%;
         box-shadow: 1px 4px 10px -1px #4793FF33;
         position: relative;
+        display: block;
+        margin-right: 15px;
         img{
           position: absolute;
           top: 50%;
@@ -258,6 +269,11 @@ onMounted(() => {
           color: #939cb0;
         }
       }
+      @media (max-width: 500px) {
+      p{
+        line-height: 30px;
+      }        
+  }
     }
   }
   @media (max-width: 768px) {
@@ -267,6 +283,12 @@ onMounted(() => {
   @media (max-width: 768px) {
     .first-box {
       width: 100%;
+      img{
+        width: 60px;
+        position: absolute;
+      right: 20px;
+      top: 35px;
+      }
     }
     .second-box {
       width: 100%;
