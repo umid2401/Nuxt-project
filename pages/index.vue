@@ -146,7 +146,6 @@ const icon = computed(() => {
   const weatherState = weatherData.value?.weather?.[0]?.main?.toLowerCase();
 
   if (!weatherState) {
-    // Agar weatherState mavjud bo‘lmasa, default qiymatni qaytaradi
     return defaultweather;
   }
 
