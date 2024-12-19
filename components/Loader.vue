@@ -19,7 +19,7 @@
     position: absolute;
     inset: 0;
     z-index: 999;
-    background: rgb(15, 40, 122)
+    background: black;
   }
   
   .loader {
